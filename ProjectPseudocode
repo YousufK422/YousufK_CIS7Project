@@ -1,0 +1,37 @@
+START
+
+DISPLAY welcome message
+
+DISPLAY list of available languages
+INPUT choiceOfLanguage
+
+SWITCH (choiceOfLanguage)
+    CASE valid:
+        DISPLAY confirmation message
+    DEFAULT:
+        DISPLAY invalid choice message
+
+DISPLAY list of medical fields
+INPUT choiceOfField
+
+SWITCH (choiceOfField)
+    CASE valid:
+        DISPLAY confirmation message
+    DEFAULT:
+        DISPLAY invalid choice message
+
+SET numberOfLanguages = 6
+SET numberOfCountries = 11
+SET possibility = numberOfLanguages * numberOfCountries
+
+CALCULATE probability = 1 / possibility
+
+INITIALIZE random seed using current time
+GENERATE randomCountry between 0 and 10
+
+DISPLAY assigned country using:
+    countries[choiceOfLanguage - 1][randomCountry]
+
+DISPLAY explanation of probability calculation
+
+END
